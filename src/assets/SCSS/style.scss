@@ -48,8 +48,8 @@
     font-size: 28px;
     font-family: 'Poppins', sans-serif;
     color: $primary;
-    &.hover{
-        color: $indigo;
+    &:hover{
+        color: $primary;
         text-decoration: none;
     }
 }
@@ -58,6 +58,7 @@ header{
     border-bottom: 1px solid $gray-200;
     width: 100%;
     position: relative;
+    margin-bottom: 70px;
 
     .navbar{
         height:80px ;
