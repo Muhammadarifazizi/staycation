@@ -10,12 +10,12 @@ import formatNumber from 'utils/formatNumber';
 
 export default function Hero(props) {
 
-    function showMostPicked(){
+    function showMostPicked() {
         window.scrollTo({
-            top: props.refMostPicked.current.offsetTop - 30,
-            behavior:"smooth"
+          top: props.refMostPicked.current.offsetTop - 30,
+          behavior: "smooth",
         });
-    }
+      }
 
     return (
         <section className="container mt-5" >
@@ -26,13 +26,13 @@ export default function Hero(props) {
                     Find Your <span className="font-weight-bolder">Heavenly</span>
                     </h1>
                     <p className="mb-4 font-weight-light text-gray-500 w-75">We provide a perfect place, to joy your life with family and friends.</p>
-                    <Button className="btn px-5" hasShadow isPrimary onclick={showMostPicked}>
+                    <Button className="btn px-5" hasShadow isPrimary onClick={showMostPicked}>
                         Show Me Now
                     </Button>
 
                     <div className="row mt-5 " style={{marginTop:80}}>
                         <div className="col-auto" style={{marginRight:35}}>
-                            <img src={IconBag} alt={`${props.data.travelers} Traavelers`} style={{width: 40}}/>
+                            <img src={IconBag} alt={`${props.data.travelers} Travelers`} style={{width: 40}}/>
                             <h6 className="mt-3">
                                 {formatNumber(props.data.travelers)} <span className="text-gray-500 font-weight-light"> travelers </span>
                             </h6>
