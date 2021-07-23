@@ -2,10 +2,12 @@ import React from 'react';
 import Stars from 'smartComponent/Stars';
 import Button from 'smartComponent/Button';
 
+import Fade from 'react-reveal/Fade';
 import TestimonialAccent from '../assets/images/testimonial1_frame.png';
 
 export default function Testimony({data}) {
     return (
+        <Fade bottom>
         <section className="container">
             <div className="row align-item-center">
                 <div className="col-auto" style={{marginRight:60}}>
@@ -45,5 +47,6 @@ export default function Testimony({data}) {
                 
             </div>
         </section>
+        </Fade>
     )
 }

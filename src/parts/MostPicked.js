@@ -1,16 +1,20 @@
 import React from 'react'
 import Button from 'smartComponent/Button';
 
+// import animation
+import Fade from 'react-reveal/Fade';
 
 export default function MostPicked(props) {
     return (
         <section className="container" ref={props.refMostPicked}> 
+        <Fade>
             <h4 className="mb-4">Most Picked</h4>  
             <div className="container-grid">
                 {props.data.map((item, index) =>{
                     return( 
                         // because we are using looping ro dispaly the item, we required to add property key
                         <div key={`mostpicked-${index}`} className={`item column-4${index === 0 ? " row-2" : " row-1"} `}> 
+                            <Fade bottom delay={500*index}>
                             <div className="card card-featured">
                                 <div className="tag">
                                     ${item.price}
@@ -28,6 +32,7 @@ export default function MostPicked(props) {
                                     </span>
                                 </div>
                             </div>
+                            </Fade>
                         </div>
                     );
                 })}
@@ -48,6 +53,7 @@ export default function MostPicked(props) {
                     <div className="card">Card 2</div>
                 </div> */}
             </div>
+            </Fade>
         </section>
     )
 }

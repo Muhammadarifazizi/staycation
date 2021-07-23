@@ -1,12 +1,14 @@
 import React from 'react'
 
 import Button from 'smartComponent/Button';
+import Fade from 'react-reveal/Fade';
 
 export default function Categories({data}) {
     
     return data.map((category, index1) =>{
         return (
             <section className="container" key={`categories-${index1}`}>
+                <Fade right delay={300*index1}>
                 <h4 className="mb-3 font-weight-medium">
                     {category.name}
                 </h4>
@@ -19,6 +21,7 @@ export default function Categories({data}) {
                         </div> : category.items.map((item, index2) =>{
                             return(
                                 <div className="item column-3 row-1" key={`category-${index1}-items-${index2}`}>
+                                    <Fade right delay={300*index2}>
                                     <div className="card">
                                         {item.isPopular && <div className="tag">Popular <span className="font-weight-light">Choice</span></div>}
                                         <figure className="img-wrapper" style={{height:150}}>
@@ -31,11 +34,14 @@ export default function Categories({data}) {
                                             <span className="text-gray-500">{item.city}, {item.country}</span>
                                         </div>
                                     </div>
+                                    </Fade>
                                 </div>
                             );
                         })
                     }
                 </div>
-            </section>);
+                </Fade>
+            </section>
+            );
     });
 }
