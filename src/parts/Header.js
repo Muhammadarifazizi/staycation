@@ -14,7 +14,7 @@ export default function Header(props) {
 
     return (
         <Fade>
-            <header className="spacing-sm">
+            <header className="">
                 <div className="container">
                     <nav className="navbar navbar-expand-lg navbar-light">
                         <IconText />

@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 
 import Header from 'parts/Header';
 import Hero from 'parts/Hero';
-import MostPicked from 'parts/MostPicked';
-import Categories from 'parts/Categories';
-import Testimony from 'parts/Testimony';
+import MostPicked from 'parts/LandingPagePart/MostPicked';
+import Categories from 'parts/LandingPagePart/Categories';
+import Testimony from 'parts/LandingPagePart/Testimony';
 import Footer from 'parts/Footer';
 
 // dumy data for frontend
@@ -18,7 +18,8 @@ export default class LandingPage extends Component {
     }
 
     render(){
-        return(<React.Fragment>
+        return(
+            <React.Fragment>
             {/* passing all props taht already have into header */}
                 <Header {...this.props}></Header>
                 <Hero refMostPicked={this.refMostPicked}  data={landingPage.hero}/>
