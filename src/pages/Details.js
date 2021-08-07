@@ -15,6 +15,11 @@ export default class Details extends Component {
         super(props);
         this.refDetails = React.createRef();
     }
+    
+    componentDidMount(){
+        window.title ="Staycation | Home";
+        window.scrollTo(0, 0);
+    }
 
     render() {
         return (

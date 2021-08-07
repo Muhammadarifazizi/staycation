@@ -91,7 +91,11 @@ section{
     margin-bottom: 50px;
 }
 .card{
-    height: 100%;
+    &.bordered{
+        border:1px solid $gray-200;
+    }
+    // height: 100%;
+    border-radius: 15px;
 
     .tag{
         z-index: 3;
@@ -242,4 +246,11 @@ footer{
 .ic-features:hover{
     background-color: #A092F9;
     box-shadow: grey;
+}
+
+main{
+    p{
+        color: $gray-500;
+        font-weight: 300;
+    }
 }

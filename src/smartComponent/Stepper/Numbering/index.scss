@@ -1,0 +1,71 @@
+@import "../../../assets/SCSS/color-variable";
+
+$stepperMainColor: $gray-200;
+$size:50px;
+
+ol.stepper{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin:0;
+    padding:0;
+
+    li{
+        position:relative;
+        display: flex;
+        align-items:center;
+        justify-content:center;
+        list-style:none;
+        width:$size;
+        border-radius: $size;
+        color: $white;
+
+        &:after{
+            position:absolute;
+            content:"";
+            z-index:2;
+            width:$size;
+            height:$size;
+            border-radius:$size;
+            background-image: url('data:image/svg+xml;utf8, <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M28.8957 11.7521L11.491 28.6375C7.25792 24.2742 3.00006 19.8854 3.00006 19.8854" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg>');
+            background-position:center;
+            background-repeat:no-repeat;
+            background-color:$teal;
+            transform: scale(1);
+            transition:0.35s transform ease-in-out;
+        }
+
+        &:not(:last-child){
+            margin-right: 60px;
+            &:before{
+                content:"";
+                z-index:-2;
+                top:50%;
+                left:100%;
+                position:absolute;
+                width:$size+10;
+                height:1px;
+                background-color: $stepperMainColor;
+            }
+        }
+    
+        &.active{
+            &:after{
+                z-index: -1;
+                background-color: $white;
+                border: 1px solid $stepperMainColor;
+                transform: scale(1.2);
+            }
+            background-color: $stepperMainColor;
+            color: $gray-200;
+
+            & ~ li{
+                color:$gray-500;
+                background:$stepperMainColor;
+                &:after{
+                    content: none;
+                }
+            }
+        }
+    }
+}

@@ -7,7 +7,7 @@ export default function Pesona({data, city, country, name}) {
   return (
     <Fade bottom>
         <section className="container">
-            <h4 className="h6">Our Impression</h4>
+            <h4 className="h6 ml-3">Our Impression</h4>
             <div className="row align-item-center">
                 <div className="col-auto" style={{marginRight:60}}>
                     <div className="testimonial-hero" style={{margin :`30px 0 0 30px`}}>
