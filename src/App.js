@@ -4,7 +4,8 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import LandingPage from "pages/LandingPage";
 // import Details from "pages/Details";
 import DetailsPage from "pages/DetailsPage";
-import CheckOut from "pages/CheckOut";
+import Checkout from "pages/Checkout";
+
 
 function App() {
   return (
@@ -13,7 +14,7 @@ function App() {
           <Switch>
             <Route exact path="/" component={LandingPage}></Route>
             {/* <Route exact path="/properties/asd1293uasdads1" component={Details}></Route> */}
-            <Route exact path="/checkout" component={CheckOut}></Route>
+            <Route exact path="/Checkout" component={Checkout}></Route>
             <Route exact path="/properties/:id" component={DetailsPage}></Route>
           </Switch>
         </Router>

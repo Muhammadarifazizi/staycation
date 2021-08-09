@@ -16,7 +16,7 @@ export default function DetailDescription({data}) {
                         return(
                             <Fade right cascade>
                             <div
-                                key={`Feature-${index}`}
+                                key={`feature-${index}`}
                                 className="col-3"
                                 style={{marginBottom:20}}
                             >

@@ -1,19 +1,25 @@
-import React, {useState} from 'react'
+import React, {useState} from 'react';
 import propTypes from 'prop-types';
 import './index.scss';
 
 export default function Text(props) {
-    // destructure properties
-    const { value, type, placeholder, name, prepend, append,outerClassName, inputClassName, errorResponse } = props;
-    
+
+    const { 
+        value, 
+        type, 
+        placeholder, 
+        name, 
+        prepend, 
+        append, 
+        inputClassName, 
+        outerClassName, 
+        errorResponse 
+    } = props; 
+
     const [hasError, setHasError] = useState(null);
     let pattern ="";
-    if (type === "email"){
-        pattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    }
-    if (type === "tel"){
-        pattern = "[0-9]*";
-    }
+    if (type === "email") pattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (type === "tel") pattern = "[0-9]*";
 
     const onChange = (e)=>{
         const target ={
@@ -22,24 +28,21 @@ export default function Text(props) {
                 value: e.target.value
             }
         }
-    };
 
-    if(type==="email"){
-        if(!pattern.test(e.target.value)){
-            setHasError(errorResponse);
-        }else{
-            setHasError("");
+        if(type === "email"){
+            if(!pattern.test(e.target.value)){
+                setHasError(errorResponse);
+            }else{
+                setHasError(null);
+            }
         }
-    }
-
-    if(type==="tel"){
-        if(e.target.validity.valid){
-            props.onChange(target)
+    
+        if(type==="tel"){
+            if(e.target.validity.valid) props.onChange(target)
         }else{
             props.onChange(target);
         }
-    }
-
+    };
 
     return (
         <div className={["input-text mb-3", outerClassName].join(" ")}>
@@ -53,7 +56,7 @@ export default function Text(props) {
                     name={name}
                     type={type}
                     pattern={pattern}
-                    className={["form-control".inputClassName].join(" ")}
+                    className={["form-control",  inputClassName].join(" ")}
                     value={value}
                     placeholder={placeholder}
                     onChange={onChange}
@@ -85,5 +88,5 @@ Text.propTypes={
     type: propTypes.string,
     placeholder: propTypes.string,
     outerClassName: propTypes.string,
-    inputClassName: propTypes.string,
+    inputClassName: propTypes.string
 };

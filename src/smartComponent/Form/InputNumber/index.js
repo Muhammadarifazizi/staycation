@@ -5,8 +5,6 @@ import "./index.scss";
 export default function Number(props) {
   const { value, placeholder, name, min, max, prefix, suffix, isSuffixPlural } = props;
 
-
-
   const onChange = e => {
     let value = String(e.target.value);
     if (prefix) value = value.replace(prefix);

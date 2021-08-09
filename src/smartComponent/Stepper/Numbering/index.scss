@@ -17,6 +17,7 @@ ol.stepper{
         justify-content:center;
         list-style:none;
         width:$size;
+        height:$size;
         border-radius: $size;
         color: $white;
 
@@ -57,7 +58,7 @@ ol.stepper{
                 transform: scale(1.2);
             }
             background-color: $stepperMainColor;
-            color: $gray-200;
+            color: $gray-500;
 
             & ~ li{
                 color:$gray-500;
